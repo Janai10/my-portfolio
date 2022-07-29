@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en"> 
+    <head>
+        <title>How does DNS work?</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- linking css file -->
+        <link rel="stylesheet" href="style.css">
+
+        <!-- bootstrap CDN -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+        <!-- font awesome -->
+        <script src="https://kit.fontawesome.com/31149d48b0.js" crossorigin="anonymous"></script>
+        <style>
+        h1 {text-align: center;}
+        h2 {text-align: center;}
+        body {
+            padding-top: 20px;
+            padding-left: 20px;
+        }
+       </style>
+    </head>
+
+    <body>
+        <h1>DNS</h1>
+        <p>The Domain Name System (DNS) is a naming database in which internet domain names are located and translated into Internet Protocol (IP) addresses.</p>  
+
+         <h2>Process of DNS</h2>
+         <p>The following are steps of the basic process of a DNS resolution.</p>
+        <ol>
+         <li>The user enters a web address or domain name into a browser.</li>
+         <li>The browser sends a message, called a recursive DNS query, to the network to find out which IP or network address the domain corresponds to.</li>
+         <li>The query goes to a recursive DNS server, which is also called a recursive resolver, and is usually managed by the internet service provider (ISP).
+             If the recursive resolver has the address, it will return the address to the user, and the webpage will load. </li>
+        <li>If the recursive DNS server does not have an answer, it will query a series of other servers in the following order: DNS root name servers, top-level domain (TLD) name servers and authoritative name servers.</li>
+        <li>The three server types work together and continue redirecting until they retrieve a DNS record that contains the queried IP address.
+         It sends this information to the recursive DNS server, and the webpage the user is looking for loads.
+         DNS root name servers and TLD servers primarily redirect queries and rarely provide the resolution themselves. </li>
+        <li>The recursive server stores, or caches, the A record for the domain name, which contains the IP address.
+         The next time it receives a request for that domain name, it can respond directly to the user instead of querying other servers.</li>
+        <li>If the query reaches the authoritative server and it cannot find the information, it returns an error message.</li>
+        </ol>
+    </body>
+</html>
